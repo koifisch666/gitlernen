@@ -75,4 +75,9 @@ git push
 
 Das ist der normale Ablauf: Erst aktualisieren, dann ändern, speichern und hochladen.
 
+## Ordner Inhalte anzeigen
+
+dir eingeben im entsprechenden cd pfad/pfad/....
+
+
 #Hier ein Test mit einem angelegten Fork zu schubertsven2011-pixel ohne Anmeldung von diesem Konto damit man trotzdem was ändern kann.
