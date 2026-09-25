@@ -80,4 +80,13 @@ Das ist der normale Ablauf: Erst aktualisieren, dann ändern, speichern und hoch
 dir eingeben im entsprechenden cd pfad/pfad/....
 
 
-#Hier ein Test mit einem angelegten Fork zu schubertsven2011-pixel ohne Anmeldung von diesem Konto damit man trotzdem was ändern kann.
+##Zweige erstellen
+Git ermöglicht es uns, Zweige zu erstellen, um mit Versionen eines Projekts zu experimentieren. Stellen Sie sich vor, Sie möchten eine Version einer Geschichte 
+mit Happy End erstellen. Sie können einen neuen Zweig erstellen und die Happy-End-Änderungen nur an diesem Zweig vornehmen. Es wird keine Auswirkungen auf die 
+Filiale haben, bis Sie dazu bereit sind master zusammenführen.
+
+git branch   prüft auf welcher Ebene wir uns befinden
+git branch new_branch    neuen zweig erstellen
+git checkout branch_name  swicht auf den neuen Zweig um um den neuen Pfad weite rzu gehen,  ist aber noch ein Clone des Masters an dieser stelle da ja auf dem neuen Zweig noch nichts verändert wurde.
+      
+
