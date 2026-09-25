@@ -75,4 +75,4 @@ git push
 
 Das ist der normale Ablauf: Erst aktualisieren, dann ändern, speichern und hochladen.
 
-#Hier ein TEst mit einem angelegten Fork zu schubertsven2011-pixel ohne Anmeldung von diesem Konto damit man trotzdem was ändern kann.
+#Hier ein Test mit einem angelegten Fork zu schubertsven2011-pixel ohne Anmeldung von diesem Konto damit man trotzdem was ändern kann.
