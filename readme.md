@@ -1,92 +1,102 @@
-# GitHub-Grundbefehle – einfach erklärt
+# GitHub-Basics – einfach erklärt
 
-GitHub ist wie ein Online-Speicher für Programmier-Projekte.
-Mit **Git** speicherst du Änderungen auf deinem Computer und lädst sie danach zu GitHub hoch.
+**Git** ist ein Werkzeug, das Änderungen an Dateien merkt.  
+**GitHub** ist eine Webseite, auf der du Git-Projekte speichern und mit anderen zusammenarbeiten kannst.
 
-## Neues Git-Projekt anlegen
+## Repository (Repo)
 
-Wenn dein Ordner noch kein Git-Projekt ist, öffne ihn in VS Code und führe im Terminal diese Befehle aus:
+Ein Projekt auf GitHub heißt **Repository**, kurz **Repo**. Stell es dir wie einen Projektordner in der Cloud vor – inklusive Versionsverlauf.
 
-```bash
-git init
-git add .
-git commit -m "GitHub Befehle erweitert"
+## Wichtige Begriffe
 
-git init macht aus dem Ordner ein Git-Projekt. Danach werden mit git add . alle Dateien ausgewählt und mit git commit
-als erster Speicherpunkt gespeichert.
+| Begriff | Bedeutung |
+| --- | --- |
+| **Repository** | Das gesamte Projekt, zum Beispiel eine Website oder ein Spiel. |
+| **Commit** | Ein gespeicherter Zwischenstand mit einer Nachricht, etwa: „Menü verbessert“. |
+| **Branch** | Eine eigene Arbeitslinie. Du kannst etwas ausprobieren, ohne die Hauptversion kaputtzumachen. |
+| **main** | Meist der Haupt-Branch: die stabile Version des Projekts. |
+| **Issue** | Eine Aufgabe, Idee oder Fehlermeldung, zum Beispiel: „Der Login-Button funktioniert nicht.“ |
+| **Pull Request (PR)** | Eine Anfrage, Änderungen aus einem Branch in `main` zu übernehmen. Andere können den Code ansehen und kommentieren. |
+| **Merge** | Das Zusammenführen eines Pull Requests in den Haupt-Branch. |
+| **Fork** | Deine eigene Kopie eines fremden Repositories auf GitHub. |
+| **Clone** | Ein GitHub-Repository auf deinen PC herunterladen. |
+| **Push** | Deine lokalen Änderungen zu GitHub hochladen. |
+| **Pull** | Änderungen von GitHub auf deinen PC holen. |
 
-## Projekt herunterladen
+## Was kannst du auf der GitHub-Webseite machen?
 
+1. Ein neues Repository anlegen (`New repository`).
+2. Dateien direkt bearbeiten oder hochladen.
+3. Unter **Issues** Aufgaben, Ideen und Fehler sammeln.
+4. Unter **Pull requests** Änderungen vergleichen, kommentieren und zusammenführen.
+5. Unter **Actions** automatische Tests oder Veröffentlichungen ausführen lassen.
+6. Andere Personen einladen und festlegen, wer etwas bearbeiten darf.
+
+## Der normale Ablauf
+
+```text
+Issue erstellen
+   ↓
+Branch dafür anlegen
+   ↓
+Dateien ändern
+   ↓
+Commit erstellen
+   ↓
+Push zu GitHub
+   ↓
+Pull Request öffnen
+   ↓
+Prüfen / kommentieren
+   ↓
+Merge nach main
+```
+
+## Arbeiten im Terminal
+
+```powershell
+# Ein bestehendes GitHub-Projekt auf deinen PC holen
 git clone https://github.com/NAME/PROJEKT.git
 
-Damit lädst du ein Projekt von GitHub auf deinen Computer. Den Link findest du auf GitHub unter dem grünen Button
-Code.
-
-## In den Projektordner gehen
-
+# In den Projektordner wechseln
 cd PROJEKT
 
-Damit wechselst du im Terminal in den Ordner des Projekts. Erst dann weiß Git, an welchem Projekt du arbeiten
-möchtest.
-
-## Schauen, was geändert wurde
-
+# Prüfen, was sich geändert hat
 git status
 
-Dieser Befehl zeigt dir, welche Dateien du geändert hast. Du kannst nichts kaputtmachen, denn es wird nur
-nachgeschaut.
+# Einen neuen Arbeits-Branch erstellen und direkt wechseln
+git switch -c mein-neues-feature
 
-## Eine Datei zum Speichern auswählen
-
-git add README.md
-
-Damit sagst du Git: „Diese Datei möchte ich gleich speichern.“
-Wenn du alle geänderten Dateien auswählen möchtest, schreibst du:
-
+# Alle geänderten Dateien zum nächsten Commit vormerken
 git add .
 
-## Änderung speichern
+# Zwischenstand speichern
+git commit -m "Kontaktformular hinzugefügt"
 
-git commit -m "Ich habe die Anleitung verbessert"
+# Deinen Branch auf GitHub hochladen
+git push -u origin mein-neues-feature
+```
 
-Ein Commit ist wie ein Speicherpunkt in einem Spiel. Der Text zwischen den Anführungszeichen erklärt, was du gemacht
-hast.
+Danach zeigt GitHub meist einen Button wie **Compare & pull request**. Klicke darauf, schreibe kurz, was du geändert hast, und erstelle den Pull Request.
 
-## Zu GitHub hochladen
+## Änderungen von anderen holen
 
-git push
+```powershell
+# Zum Haupt-Branch wechseln
+git switch main
 
-Damit lädst du deine gespeicherten Änderungen zu GitHub hoch. Danach können andere die neue Version online sehen.
-
-## Neue Änderungen von GitHub holen
-
+# Aktuellen Stand von GitHub herunterladen
 git pull
+```
 
-Damit lädst du Änderungen herunter, die andere Leute inzwischen zu GitHub hochgeladen haben. Mache das am besten,
-bevor du selbst mit der Arbeit beginnst.
+## Mini-Spickzettel
 
-## Die wichtigsten Befehle zusammen
+```powershell
+git status                 # Was ist verändert?
+git add .                  # Änderungen vormerken
+git commit -m "Nachricht"  # Änderungen speichern
+git push                   # Zu GitHub hochladen
+git pull                   # Von GitHub herunterladen
+```
 
-git pull
-git status
-git add .
-git commit -m "Meine Änderung"
-git push
-
-Das ist der normale Ablauf: Erst aktualisieren, dann ändern, speichern und hochladen.
-
-## Ordner Inhalte anzeigen
-
-dir eingeben im entsprechenden cd pfad/pfad/....
-
-
-##Zweige erstellen
-Git ermöglicht es uns, Zweige zu erstellen, um mit Versionen eines Projekts zu experimentieren. Stellen Sie sich vor, Sie möchten eine Version einer Geschichte 
-mit Happy End erstellen. Sie können einen neuen Zweig erstellen und die Happy-End-Änderungen nur an diesem Zweig vornehmen. Es wird keine Auswirkungen auf die 
-Filiale haben, bis Sie dazu bereit sind master zusammenführen.
-
-git branch   prüft auf welcher Ebene wir uns befinden
-git branch new_branch    neuen zweig erstellen
-git checkout branch_name  swicht auf den neuen Zweig um um den neuen Pfad weite rzu gehen,  ist aber noch ein Clone des Masters an dieser stelle da ja auf dem neuen Zweig noch nichts verändert wurde.
-      
-
+> **Tipp:** Arbeite für neue Sachen möglichst in einem eigenen Branch und ändere `main` nicht direkt. So sind Fehler leichter rückgängig zu machen und Pull Requests bleiben übersichtlich.
